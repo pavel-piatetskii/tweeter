@@ -1,5 +1,5 @@
 header {
-  width: 100%;
+  width: 100vw;
   height: 400px;
   background-image: url('/images/little-pluses.png');
   background-color: rgb(223, 216, 159);
