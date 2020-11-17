@@ -1,0 +1,16 @@
+nav {
+  display: flex;
+  height: 120px;
+  width: inherit;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  align-items: center;
+}
+
+nav * {
+  padding: 1.5em;
+}
+
+nav span {
+  font-family: 'Bungee', cursive;
+}
