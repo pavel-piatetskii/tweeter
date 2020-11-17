@@ -28,4 +28,15 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
  }
+
+ body * {
+   display: flex;
+ }
+
+.container {
+  width: 90%;
+  flex-direction: column;
+}

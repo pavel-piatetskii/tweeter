@@ -1,7 +1,6 @@
 nav {
-  display: flex;
   height: 120px;
-  width: inherit;
+  width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
   align-items: center;
