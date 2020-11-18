@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(document).ready(function() {
 
   $('#tweet-text').on('input', function() {
     const $tweetField = $(this);

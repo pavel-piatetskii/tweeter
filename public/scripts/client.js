@@ -41,12 +41,12 @@ const data = [
   }
 ]
 
+const daysAgo = function(date) {
+  return Math.floor((Date.now() - date) / (1000 * 3600 * 24))
+}
+
 const createTweetElement = function(data) {
   const { user, content, created_at } = data;
-
-  const daysAgo = function(date) {
-    return Math.floor((Date.now() - date) / (1000 * 3600 * 24))
-  }
 
   return `
     <article>
@@ -84,9 +84,7 @@ const applyTweetHoverEffects = function($tweet) {
   })
 }
 
-//const $tweet = createTweetElement(tweetData);
-
-$(document).ready(() => {
+$(document).ready(function() {
 
   renderTweets(data);
 

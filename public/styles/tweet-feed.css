@@ -2,7 +2,7 @@
   flex-direction: column;
 }
 
-#tweet-feed article {
+article {
   margin: 50px 0px;
   padding: 20px;
   border-width: 5px;
@@ -11,26 +11,26 @@
   border-style: solid;
 }
 
-#tweet-feed article * {
+article header, div, footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-#tweet-feed header {
+article header {
   padding: 0px 20px 30px 0;
 }
 
-#tweet-feed .author-name {
+.author-name {
   font-weight: 300;
 }
 
-#tweet-feed .author-account {
+.author-account {
   color: #f4f1ec;
   font-weight: 600;
 }
 
-#tweet-feed p {
+article p {
   font-size: 20pt;
   padding-bottom: 35px;
   margin: 0px;
@@ -38,14 +38,14 @@
   border-bottom-width: 5px;
   border-style: solid;
 }
-#tweet-feed header img {
+article header img {
   margin-right: 15px;
   width: 75px;
   height: 75px;
   background-color: inherit;
 }
 
-#tweet-feed .date-ago {
+.date-ago {
   font-size: 13pt;
   padding-top: 10px;
 }
