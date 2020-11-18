@@ -1,3 +1,7 @@
+#tweet-feed {
+  flex-direction: column;
+}
+
 #tweet-feed article {
   margin: 50px 0px;
   padding: 20px;

@@ -6,7 +6,7 @@ $(document).ready(() => {
 
     const charsLeft = 140 - $tweetField.val().length
     if (charsLeft < 0) counter.css('color', 'red')
-    if (charsLeft === 0) counter.css('color', '#545149')
+    if (charsLeft >= 0) counter.css('color', '#545149')
 
     counter.val(charsLeft);
   });
