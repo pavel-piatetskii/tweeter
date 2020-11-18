@@ -8,9 +8,11 @@
 
 #tweet-text {
   background-color: transparent;
-  height: 1.5em;
+  height: 3em;
   border-width: 0;
   border-bottom-width: 3px;
+  font-size: 14pt;
+  color: #545149;
   resize: none;
   outline: none;
 }
