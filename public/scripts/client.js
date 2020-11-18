@@ -41,8 +41,22 @@ const data = [
   }
 ]
 
-const daysAgo = function(date) {
-  return Math.floor((Date.now() - date) / (1000 * 3600 * 24))
+const timeAgo = function(date) {
+  const timeMap = { 
+    'year' : 24 * 60 * 60 * 1000 * 365,
+    'month' : 24 * 60 * 60 * 1000 * 30.42,
+    'day' : 24 * 60 * 60 * 1000,
+    'hour' : 60 * 60 * 1000,
+    'minute' : 60 * 1000,
+    'order': ['year', 'month', 'day', 'hour', 'minute']
+  }
+  const delta = Math.floor((Date.now() - date));
+  for (const unit of timeMap.order) {
+    const num = Math.floor(delta / timeMap[unit]);
+    if (num >= 1) return `${num} ${unit}${(num === 1) ? '' : 's'} ago`
+  }
+  return 'now';
+  //return Math.floor((Date.now() - date) / (1000 * 3600 * 24))
 }
 
 const createTweetElement = function(data) {
@@ -56,7 +70,7 @@ const createTweetElement = function(data) {
       </header>
       <p>${content.text}</p>
       <footer>
-        <div class="date-ago">${daysAgo(data.created_at)} days ago</div>
+        <div class="date-ago">${timeAgo(data.created_at)}</div>
         <div><img src="/images/tweet-footer-buttons.png"></div>
       </footer>
     </article>
@@ -65,8 +79,8 @@ const createTweetElement = function(data) {
 
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
-    $('#tweet-feed').append(createTweetElement(tweet));
-    applyTweetHoverEffects($('#tweet-feed article:last-child'));
+    $('#tweet-feed').prepend(createTweetElement(tweet));
+    applyTweetHoverEffects($('#tweet-feed article:first-child'));
   }
 }
 
@@ -86,13 +100,24 @@ const applyTweetHoverEffects = function($tweet) {
 
 $(document).ready(function() {
 
-  renderTweets(data);
+  const loadTweets = function() {
+    $.ajax('/tweets/', { method: 'GET' })
+      .then(function(res) {
+        renderTweets(res);
+      })
+  }
+
+  loadTweets();
 
   $('form').on('submit', function(event) {
     event.preventDefault();
-    // console.log($(this).serialize())
     const tweet = $(this).serialize()
-    $.ajax(`/tweets/`, { method: 'POST', body: tweet })
+    $.ajax(`/tweets/`, { method: 'POST', data: tweet })
+      //.then(function (res) {
+      //  console.log(res);
+      //})
   })
+
+
 
 })
