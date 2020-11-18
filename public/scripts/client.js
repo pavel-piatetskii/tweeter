@@ -88,4 +88,11 @@ $(document).ready(function() {
 
   renderTweets(data);
 
+  $('form').on('submit', function(event) {
+    event.preventDefault();
+    // console.log($(this).serialize())
+    const tweet = $(this).serialize()
+    $.ajax(`/tweets/`, { method: 'POST', body: tweet })
+  })
+
 })
