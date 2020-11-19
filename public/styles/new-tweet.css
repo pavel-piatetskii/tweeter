@@ -31,3 +31,10 @@ form div button {
   border-width: 0;
   padding: 4px;
 }
+
+mark {
+  font-size: 14pt;
+  font-weight: 300;
+  background-color: inherit;
+  color: red;
+}

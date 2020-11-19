@@ -107,14 +107,16 @@ const applyTweetHoverEffects = function($tweet) {
 $(document).ready(function() {
 
   // Validation of input form contents
-  const validTweet = function() {
-    const tweetLength = $('#tweet-text').val().length;
-    if ( tweetLength === 0) {
-      alert('The tweet form cannot be empty!');
+  const validTweet = function(str) {
+    const tweetLength = str.length;
+    if ( str.length === 0) {
+      $('mark').text('The tweet form cannot be empty!').slideDown();
+      setTimeout(() => $('mark').slideUp(), 4000)
       return false;
     }
-    if ( tweetLength > 140 ) {
-      alert('The tweet cannot be more than 140 characters long!');
+    if ( str.length > 140 ) {
+      $('mark').text('The tweet is too long!').slideDown();
+      setTimeout(() => $('mark').slideUp(), 4000)
       return false;
     }
     return true;
@@ -135,7 +137,7 @@ $(document).ready(function() {
     event.preventDefault();
     const tweet = $(this).serialize();
     
-    if (validTweet) {
+    if (validTweet($('#tweet-text').val())) {
       $('#tweet-text').val('')
       $.ajax(`/tweets/`, { method: 'POST', data: tweet })
 
