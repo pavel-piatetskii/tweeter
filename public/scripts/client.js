@@ -130,11 +130,25 @@ $(document).ready(function() {
       })
   }
 
+  const animateLogo = function() {
+    $('nav img').css('background-color', '#5d73bd')
+    setTimeout(function() {
+      $('nav img').css('background-color', '#4056A1')
+    }, 4000);
+    setInterval(function() {
+      $('nav img').css('background-color', '#5d73bd')
+      setTimeout(function() {
+        $('nav img').css('background-color', '#4056A1')
+      }, 4000);
+    }, 8000);
+  }
+
+  animateLogo();
   loadTweets();
 
   // Actions after the new tweet submition
-  $('form').on('submit', function(event) {
-    event.preventDefault();
+  $('form').on('submit', function(e) {
+    e.preventDefault();
     const tweet = $(this).serialize();
     
     if (validTweet($('#tweet-text').val())) {
@@ -150,4 +164,20 @@ $(document).ready(function() {
       })
     } 
   })
+
+
+
+  $('nav div').on('click', function(e) {
+    $('#new-tweet').slideToggle(500);
+  });
+
+  $('nav div').hover(function(e) { $(this).children('span').animate({width: 'toggle'})});
+    // $(this).children('span').css('width', '100%')
+     //$(this).children('span').css('visibility', 'visible')
+     //$(this).children('span').animate({width: 'toggle'});
+  //}, function(e) {
+    // $(this).children('span').css('width', '0px')
+     //$(this).children('span').css('visibility', 'hidden')
+     //$(this).children('span').animate({width: '0'});
+  //});
 });

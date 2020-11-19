@@ -9,7 +9,7 @@
 
     <!-- External Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,700&display=swap" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;0,900;1,300;1,700&display=swap" >
 
     <!-- App CSS -->
     <link rel="stylesheet" type="text/css" href="/styles/layout.css" />
@@ -30,6 +30,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
+      <div><img src="/images/a-cute-white.png"><span hidden>Write a new tweet</span></div>
     </nav>
 
     <header>
@@ -45,7 +46,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section id="new-tweet">
+      <section id="new-tweet" hidden>
         <h2>Compose Tweet</h2>
         <form action="/tweets/" method="POST">
           <label for="tweet-text">What are you humming about?</label>

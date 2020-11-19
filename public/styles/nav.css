@@ -1,17 +1,37 @@
 nav {
   height: 120px;
-  width: 100vw;
+  width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
   align-items: center;
   position: sticky;
   top: 0;
+  justify-content: space-between;
+  
 }
 
-nav * {
-  padding: 1.5em;
-}
-
-nav span {
+nav > span {
   font-family: 'Bungee', cursive;
+  font-size: 30pt;
+  margin-left: 30px;
+}
+
+nav img {
+  height: 64px;
+  width: 64px;
+  margin-right: 20px;
+  background-color: #4056A1;
+  border-radius: 20px;
+  transition: background-color 4s;
+}
+
+nav div {
+  font-weight: 900;
+  height: 100%;
+  padding-right: 30px;
+}
+
+nav div span {
+  overflow: hidden;
+  white-space: nowrap;
 }
