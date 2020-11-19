@@ -44,14 +44,15 @@ body {
 
 .to-top {
   width: 95vw;
+  height: 120px;
   position: sticky;
   bottom: 0;
   justify-content: flex-end;
 }
 
 .to-top img {
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
   cursor: pointer;
   margin: 20px;
 }

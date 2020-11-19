@@ -6,7 +6,8 @@
 
 
  /**
-  * Check if the tweet fits the 1-140 chars requirement
+  * Check if the tweet fits the 1-140 chars requirement.
+  * If check fails - slide down an appropriade error message
   * @param {*} str - tweet text
   */
  const validTweet = function(str) {
@@ -146,8 +147,8 @@ const renderTweets = function(tweets) {
  * 1. Stop the 'tweet' button from submitting
  * 2. Validate tweet text for length 1-140 chars
  * 3. Send a new tweet text to the server
- * 4. Load the new tweet with user, time. etc data from the server
- * 5. Render the new tweet without resreshing the feed
+ * 4. Load the tweets db from the server
+ * 5. Render the last db entry (the new tweet) without resreshing the feed
  */
 const submitNewTweet = function() {
   

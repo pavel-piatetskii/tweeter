@@ -33,10 +33,16 @@ const logoOpenNewTweet = function() {
  * Animate text 'Write new tweet' near the bird logo to slide side over hovering
  */
 const logoTextSlide = function() {
-  
-  $('nav div').hover(function(e) { 
-    $(this).children('span').animate({width: 'toggle'})
-  });
+
+  $('nav div').mouseenter(function() {
+    $(this).children('span').stop();
+    $(this).children('span').animate({width: 'show'}, 500);
+  })
+
+  $('nav div').mouseleave(function() {
+    $(this).children('span').stop();
+    $(this).children('span').animate({width: 'hide'}, 500);
+  })
 
 };
 
