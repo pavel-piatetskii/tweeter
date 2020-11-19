@@ -59,6 +59,12 @@ const timeAgo = function(date) {
   //return Math.floor((Date.now() - date) / (1000 * 3600 * 24))
 }
 
+const escape = function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 const createTweetElement = function(data) {
   const { user, content, created_at } = data;
 
@@ -68,7 +74,7 @@ const createTweetElement = function(data) {
         <div class="author-name"><img src="${user.avatars}">${user.name}</div>
         <div class="author-account">${user.handle}</div>
       </header>
-      <p>${content.text}</p>
+      <p>${escape(content.text)}</p>
       <footer>
         <div class="date-ago">${timeAgo(data.created_at)}</div>
         <div><img src="/images/tweet-footer-buttons.png"></div>
