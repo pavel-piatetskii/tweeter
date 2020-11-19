@@ -100,6 +100,21 @@ const applyTweetHoverEffects = function($tweet) {
 
 $(document).ready(function() {
 
+  // Validation of input form contents
+  const validTweet = function() {
+    const tweetLength = $('#tweet-text').val().length;
+    if ( tweetLength === 0) {
+      alert('The tweet form cannot be empty!');
+      return false;
+    }
+    if ( tweetLength > 140 ) {
+      alert('The tweet cannot be more than 140 characters long!');
+      return false;
+    }
+    return true;
+  };
+  
+  // Load existing tweets
   const loadTweets = function() {
     $.ajax('/tweets/', { method: 'GET' })
       .then(function(res) {
@@ -109,22 +124,22 @@ $(document).ready(function() {
 
   loadTweets();
 
+  // Actions after the new tweet submition
   $('form').on('submit', function(event) {
     event.preventDefault();
     const tweet = $(this).serialize();
     
-    // Validation of input form contents
-    const tweetLength = $('#tweet-text').val().length;
-    if ( tweetLength === 0) {
-      alert('The tweet form cannot be empty!');
-    } else if ( tweetLength > 140 ) {
-      alert('The tweet cannot be more than 140 characters long!');
-    } else {
+    if (validTweet) {
       $('#tweet-text').val('')
       $.ajax(`/tweets/`, { method: 'POST', data: tweet })
-        //.then(function (res) {
-        //  console.log(res);
-        //})
-    }
+
+      .then(function() {
+        return $.ajax(`/tweets/`, { method: 'GET'})
+      })
+      // tweets are date-sorted, so take last one to add to the page
+      .then(function(tweets) {
+        renderTweets( [ tweets.pop() ] );
+      })
+    } 
   })
-})
+});
