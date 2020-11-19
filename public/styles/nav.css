@@ -20,7 +20,7 @@ nav img {
   height: 64px;
   width: 64px;
   margin-right: 20px;
-  background-color: #4056A1;
+  background-color: #697cbb;
   border-radius: 20px;
   transition: background-color 4s;
 }
@@ -29,6 +29,7 @@ nav div {
   font-weight: 900;
   height: 100%;
   padding-right: 30px;
+  cursor: pointer;
 }
 
 nav div span {

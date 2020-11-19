@@ -130,17 +130,18 @@ $(document).ready(function() {
       })
   }
 
+
   const animateLogo = function() {
-    $('nav img').css('background-color', '#5d73bd')
+    $('nav img').css('background-color', '#697cbb')
     setTimeout(function() {
-      $('nav img').css('background-color', '#4056A1')
-    }, 4000);
+      $('nav img').css('background-color', '#5466a1')
+    }, 3000);
     setInterval(function() {
-      $('nav img').css('background-color', '#5d73bd')
+      $('nav img').css('background-color', '#697cbb')
       setTimeout(function() {
-        $('nav img').css('background-color', '#4056A1')
-      }, 4000);
-    }, 8000);
+        $('nav img').css('background-color', '#5466a1')
+      }, 3000);
+    }, 6000);
   }
 
   animateLogo();
@@ -171,13 +172,6 @@ $(document).ready(function() {
     $('#new-tweet').slideToggle(500);
   });
 
-  $('nav div').hover(function(e) { $(this).children('span').animate({width: 'toggle'})});
-    // $(this).children('span').css('width', '100%')
-     //$(this).children('span').css('visibility', 'visible')
-     //$(this).children('span').animate({width: 'toggle'});
-  //}, function(e) {
-    // $(this).children('span').css('width', '0px')
-     //$(this).children('span').css('visibility', 'hidden')
-     //$(this).children('span').animate({width: '0'});
-  //});
+  $('nav div').hover(function(e) { 
+    $(this).children('span').animate({width: 'toggle'})})
 });
