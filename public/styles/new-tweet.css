@@ -1,9 +1,14 @@
 #new-tweet {
   flex-direction: column;
+  margin: 0 0 50px 0;
 }
 
 form {
   flex-direction: column;
+}
+
+#new-tweet h2 {
+  margin: 0 0 30px 0;
 }
 
 #tweet-text {

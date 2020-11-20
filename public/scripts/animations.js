@@ -1,20 +1,21 @@
 /**
- * Animate the bird logo using slightly changing background color
+ * Animate the bird logo using slightly changing shadow
  */
 const animateLogo = function() {
 
-  $('nav img').css('background-color', '#697cbb')
+  const delay = 2000;
+
+  $('nav img').css('filter', 'drop-shadow(6px 6px 3px grey)')
   setTimeout(function() {
-    $('nav img').css('background-color', '#5466a1')
-  }, 3000);
-
+    $('nav img').css('filter', 'drop-shadow(2px 2px 0px grey)')
+  }, delay);
+  
   setInterval(function() {
-    $('nav img').css('background-color', '#697cbb')
+    $('nav img').css('filter', 'drop-shadow(6px 6px 3px grey)')
     setTimeout(function() {
-      $('nav img').css('background-color', '#5466a1')
-    }, 3000);
-  }, 6000);
-
+      $('nav img').css('filter', 'drop-shadow(2px 2px 0px grey)')
+    }, delay);
+  }, delay * 2);
 };
 
 

@@ -166,6 +166,7 @@ const submitNewTweet = function() {
       // tweets are date-sorted, so take last one to add to the page
       .then(function(tweets) {
         renderTweets( [ tweets.pop() ] );
+        $('#tweet-feed article:first-child').hide().slideDown();
       })
     } 
   })

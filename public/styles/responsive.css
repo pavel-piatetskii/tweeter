@@ -1,0 +1,26 @@
+/* Responsive layouts*/
+
+@media only screen and (min-width: 1024px) {
+
+  body > header {
+    float: left;
+    width: 30vw;
+    margin: 100px 12vw 0 5vw;
+  }
+
+  .container {
+    width: 50%;
+    margin: 100px 0;
+  }
+
+  nav {
+    background-color: #4056A1;
+    background-image: unset;
+  }
+
+  .to-top img{
+    margin-right: 105%;
+  }
+
+
+}

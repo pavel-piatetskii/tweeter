@@ -1,7 +1,8 @@
 nav {
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
+  background-color:  darkgoldenrod;
+  background-image: url('/images/little-pluses.png');
   color: #FFFFFF;
   align-items: center;
   position: sticky;
@@ -17,12 +18,15 @@ nav > span {
 }
 
 nav img {
-  height: 64px;
-  width: 64px;
+  height: 80px;
+  width: 80px;
   margin-right: 20px;
-  background-color: #697cbb;
+  background-color: transparent;
+  filter: drop-shadow(2px 2px 0px  grey);
   border-radius: 20px;
-  transition: background-color 4s;
+  border-width: 5px;
+  border-style: solid;
+  transition: filter 2s;
 }
 
 nav div {
