@@ -21,7 +21,7 @@ Tweeter is a single-page application which aimed to help people exchange short m
 !["Desktop version - main view"](https://github.com/pavel-piatetskii/tweeter/blob/master/docs/desktop-main.png)
 
 
-- ### Compose new tweet view
+- ### Compose new tweet form
 
 - #### The bird logo is a button to open the form
 
@@ -34,14 +34,24 @@ Tweeter is a single-page application which aimed to help people exchange short m
 
 - ### Self-check for errors
 
-- #### If you forget to write anything or have to say too much, Tweeter will gently remaind you about it. 
+- #### If you forget to write anything or have to say too much, Tweeter will gently remind you about it. 
 
 !["mobile-write-tweet"](https://github.com/pavel-piatetskii/tweeter/blob/master/docs/mobile-write-tweet.png)
 
-- #### In the form you can wrute your tweet up to 140 characters long
+- #### In the form you can write your tweet up to 140 characters long
 
-!["desktop-compose"](https://github.com/pavel-piatetskii/tweeter/blob/master/docs/desktop-compose.png)
+!["error-empty"](https://github.com/pavel-piatetskii/tweeter/blob/master/docs/error-empty.png)
+!["error-long"](https://github.com/pavel-piatetskii/tweeter/blob/master/docs/error-long.png)
 
+- ### Features
+
+- #### If mouse is over a tweet it is highlighter with nice shadow, also, a user's handler is revealed along with the control buttons (work in progress)
+
+!["tweet-hover"](https://github.com/pavel-piatetskii/tweeter/blob/master/docs/tweet-hover.png)
+
+- #### When you scroll the feed, a little green button appears in the bottom-right corner. Not only this button will help you to return to the top, but also will open the new tweet form so you can start writing your message immediately
+
+!["to-top-button"](https://github.com/pavel-piatetskii/tweeter/blob/master/docs/to-top-button.png)
 
 
 ## Dependencies
