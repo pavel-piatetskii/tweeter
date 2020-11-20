@@ -27,7 +27,7 @@ Tweeter is a single-page application which aimed to help people exchange short m
 
 !["mobile-write-tweet"](https://github.com/pavel-piatetskii/tweeter/blob/master/docs/mobile-write-tweet.png)
 
-- #### In the form you can wrute your tweet up to 140 characters long. The built-in counter will help you plan your message.
+- #### In the form you can write your tweet up to 140 characters long. The built-in counter will help you plan your message.
 
 !["desktop-compose"](https://github.com/pavel-piatetskii/tweeter/blob/master/docs/desktop-compose.png)
 
@@ -35,10 +35,6 @@ Tweeter is a single-page application which aimed to help people exchange short m
 - ### Self-check for errors
 
 - #### If you forget to write anything or have to say too much, Tweeter will gently remind you about it. 
-
-!["mobile-write-tweet"](https://github.com/pavel-piatetskii/tweeter/blob/master/docs/mobile-write-tweet.png)
-
-- #### In the form you can write your tweet up to 140 characters long
 
 !["error-empty"](https://github.com/pavel-piatetskii/tweeter/blob/master/docs/error-empty.png)
 !["error-long"](https://github.com/pavel-piatetskii/tweeter/blob/master/docs/error-long.png)
