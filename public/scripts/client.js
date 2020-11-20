@@ -1,26 +1,18 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+/**
+ * Check if the tweet fits the 1-140 chars requirement.
+ * If check fails - slide down an appropriade error message
+ * @param {*} str - tweet text
  */
+const validTweet = function(str) {
 
-
- /**
-  * Check if the tweet fits the 1-140 chars requirement.
-  * If check fails - slide down an appropriade error message
-  * @param {*} str - tweet text
-  */
- const validTweet = function(str) {
-
-  const tweetLength = str.length;
-  if ( str.length === 0) {
+  if (str.length === 0) {
     $('mark').text('The tweet form cannot be empty!').slideDown();
-    setTimeout(() => $('mark').slideUp(), 4000)
+    setTimeout(() => $('mark').slideUp(), 4000);
     return false;
   }
-  if ( str.length > 140 ) {
+  if (str.length > 140) {
     $('mark').text('The tweet is too long!').slideDown();
-    setTimeout(() => $('mark').slideUp(), 4000)
+    setTimeout(() => $('mark').slideUp(), 4000);
     return false;
   }
   return true;
@@ -36,36 +28,40 @@ const loadTweets = function() {
   $.ajax('/tweets/', { method: 'GET' })
     .then(function(res) {
       renderTweets(res);
-    })
+    });
 
 };
 
 
 /**
- * Show shadow effect and reveal the user account
- * when hovering over a separate tweet in the feed
+ * Show shadow effect and reveal the user handle along with
+ * the footer icon set when hovering over a separate tweet in the feed
  * @param {*} $tweet - a particular tweet to apply effects to
  */
 const applyTweetHoverEffects = function($tweet) {
 
   $tweet.hover(function() {
     $(this).css('box-shadow', '10px 10px 0 0 lightsteelblue');
-    $(this).children('header')
-           .children('div.author-account')
-           .show();
-    $(this).children('footer')
-           .children('div')
-           .children('img')
-           .show();
+    $(this)
+      .children('header')
+      .children('div.author-account')
+      .show();
+    $(this)
+      .children('footer')
+      .children('div')
+      .children('img')
+      .show();
   },function() {
     $(this).css('box-shadow', '');
-    $(this).children('header')
-           .children('div.author-account')
-           .hide();
-  $(this).children('footer')
-           .children('div')
-           .children('img')
-           .hide();
+    $(this)
+      .children('header')
+      .children('div.author-account')
+      .hide();
+    $(this)
+      .children('footer')
+      .children('div')
+      .children('img')
+      .hide();
   });
 
 };
@@ -80,7 +76,7 @@ const applyTweetHoverEffects = function($tweet) {
  */
 const timeAgo = function(date) {
 
-  const timeMap = { 
+  const timeMap = {
     'year' : 24 * 60 * 60 * 1000 * 365,
     'month' : 24 * 60 * 60 * 1000 * 30.42,
     'day' : 24 * 60 * 60 * 1000,
@@ -92,7 +88,7 @@ const timeAgo = function(date) {
   const delta = Math.floor((Date.now() - date));
   for (const unit of timeMap.order) {
     const num = Math.floor(delta / timeMap[unit]);
-    if (num >= 1) return `${num} ${unit}${(num === 1) ? '' : 's'} ago`
+    if (num >= 1) return `${num} ${unit}${(num === 1) ? '' : 's'} ago`;
   }
   return 'now';
 
@@ -120,7 +116,7 @@ const disarm = function(str) {
  *  */
 const createTweetElement = function(data) {
 
-  const { user, content, created_at } = data;
+  const { user, content } = data;
 
   return `
     <article>
@@ -134,7 +130,7 @@ const createTweetElement = function(data) {
         <div><img hidden src="/images/tweet-footer-buttons.png"></div>
       </footer>
     </article>
-  `
+  `;
 };
 
 
@@ -165,20 +161,20 @@ const submitNewTweet = function() {
     const tweet = $(this).serialize();
     
     if (validTweet($('#tweet-text').val())) {
-      $('#tweet-text').val('')
-      $('.counter').val(140)
+      $('#tweet-text').val('');
+      $('.counter').val(140);
       $.ajax(`/tweets/`, { method: 'POST', data: tweet })
   
-      .then(function() {
-        return $.ajax(`/tweets/`, { method: 'GET'})
-      })
-      // tweets are date-sorted, so take last one to add to the page
-      .then(function(tweets) {
-        renderTweets( [ tweets.pop() ] );
-        $('#tweet-feed article:first-child').hide().slideDown();
-      })
-    } 
-  })
+        .then(function() {
+          return $.ajax(`/tweets/`, { method: 'GET'});
+        })
+        // tweets are date-sorted, so take last one to add to the page
+        .then(function(tweets) {
+          renderTweets([ tweets.pop() ]);
+          $('#tweet-feed article:first-child').hide().slideDown();
+        });
+    }
+  });
 
 };
 
