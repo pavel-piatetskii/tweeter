@@ -158,6 +158,7 @@ const submitNewTweet = function() {
     
     if (validTweet($('#tweet-text').val())) {
       $('#tweet-text').val('')
+      $('.counter').val(140)
       $.ajax(`/tweets/`, { method: 'POST', data: tweet })
   
       .then(function() {

@@ -1,0 +1,11 @@
+@use 'mixins';
+
+body > header {
+  height: 400px;
+  margin: 0 0 50px 0;
+  background-image: url('/images/little-pluses.png');
+  background-color: darkgoldenrod;
+  justify-content: center;
+  align-items: center;
+  @include mixins.flex-direction(column);
+}

@@ -1,0 +1,46 @@
+@use 'layout';
+
+nav {
+  height: 120px;
+  width: 100%;
+  background-color:  darkgoldenrod;
+  background-image: url('/images/little-pluses.png');
+  color: #FFFFFF;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  
+  span {
+    font: layout.$font-cursive;
+    font-size: 2rem;
+    margin-left: 30px;
+  }
+
+  div {
+    padding-right: 30px;
+    cursor: pointer;
+    
+    img {
+      height: 80px;
+      width: 80px;
+      margin-right: 20px;
+      background-color: transparent;
+      filter: drop-shadow(2px 2px 0px  grey);
+      border-radius: 20px;
+      border: 5px solid;
+      transition: filter 2s;
+    }
+    
+    span {
+      font: layout.$font-sans;
+      font-weight: 900;
+      font-size: larger;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+}
+
+
+

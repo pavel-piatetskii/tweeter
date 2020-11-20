@@ -1,0 +1,56 @@
+@use 'mixins';
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+ 
+$font-sans: 600 24px 'Source Sans Pro', sans-serif;
+$font-cursive: 600 24px 'Bungee', cursive;
+
+$color: #545149;
+$back-color: #f4f1ec;
+
+body {
+  color: $color;
+  background-color: $back-color;
+  font: $font-sans;
+}
+
+
+
+
+ body * {
+   display: flex;
+ }
+
+.container {
+  margin: 0 5vw;
+  @include mixins.flex-direction(column);
+}
+
+.to-top {
+  height: 120px;
+  position: sticky;
+  bottom: 0;
+  justify-content: flex-end;
+
+  img {
+    height: 75px;
+    width: 75px;
+    cursor: pointer;
+    margin: 20px;
+  }
+}
+
+

@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -13,44 +14,33 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
+  font: 600 24px "Source Sans Pro", sans-serif;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
- body {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 600;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: center; */
- }
-
- body * {
-   display: flex;
- }
+body * {
+  display: flex;
+}
 
 .container {
-  /* width: 90%; */
   margin: 0 5vw;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-direction: normal;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .to-top {
-  width: 105%;
   height: 120px;
   position: sticky;
   bottom: 0;
   justify-content: flex-end;
 }
-
 .to-top img {
   height: 75px;
   width: 75px;
@@ -58,3 +48,4 @@ body {
   margin: 20px;
 }
 
+/*# sourceMappingURL=layout.css.map */
