@@ -26,6 +26,7 @@ const logoOpenNewTweet = function() {
 
   $('nav div').on('click', function(e) {
     $('#new-tweet').slideToggle(500);
+    $('#tweet-text').focus();
   });
 
 };

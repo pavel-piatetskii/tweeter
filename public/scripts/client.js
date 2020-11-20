@@ -52,13 +52,21 @@ const applyTweetHoverEffects = function($tweet) {
     $(this).css('box-shadow', '10px 10px 0 0 lightsteelblue');
     $(this).children('header')
            .children('div.author-account')
-           .css('color', 'lightsteelblue');
+           .show();
+    $(this).children('footer')
+           .children('div')
+           .children('img')
+           .show();
   },function() {
     $(this).css('box-shadow', '');
     $(this).children('header')
            .children('div.author-account')
-           .css('color', '#f4f1ec');
-  })
+           .hide();
+  $(this).children('footer')
+           .children('div')
+           .children('img')
+           .hide();
+  });
 
 };
 
@@ -118,12 +126,12 @@ const createTweetElement = function(data) {
     <article>
       <header>
         <div class="author-name"><img src="${user.avatars}">${user.name}</div>
-        <div class="author-account">${user.handle}</div>
+        <div class="author-account" hidden>${user.handle}</div>
       </header>
       <p>${disarm(content.text)}</p>
       <footer>
         <div class="date-ago">${timeAgo(data.created_at)}</div>
-        <div><img src="/images/tweet-footer-buttons.png"></div>
+        <div><img hidden src="/images/tweet-footer-buttons.png"></div>
       </footer>
     </article>
   `

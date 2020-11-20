@@ -45,7 +45,7 @@ body * {
   height: 75px;
   width: 75px;
   cursor: pointer;
-  margin: 20px;
+  margin: 20px -20px 20px 20px;
 }
 
 /*# sourceMappingURL=layout.css.map */

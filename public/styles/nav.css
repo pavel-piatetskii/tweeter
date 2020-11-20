@@ -45,7 +45,7 @@ body * {
   height: 75px;
   width: 75px;
   cursor: pointer;
-  margin: 20px;
+  margin: 20px -20px 20px 20px;
 }
 
 nav {
@@ -58,14 +58,13 @@ nav {
   position: sticky;
   top: 0;
   justify-content: space-between;
+  padding: 0 30px;
 }
 nav span {
   font: 600 24px "Bungee", cursive;
   font-size: 2rem;
-  margin-left: 30px;
 }
 nav div {
-  padding-right: 30px;
   cursor: pointer;
 }
 nav div img {

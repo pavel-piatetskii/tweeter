@@ -25,6 +25,7 @@ const clickToTopButton = function() {
   $('.to-top img').click(function() {
     window.scrollTo(0, 0)
     $('#new-tweet').slideDown(500);
+    $('#tweet-text').focus();
   });
 
 };

@@ -16,7 +16,8 @@ form {
   height: 3em;
   border-width: 0;
   border-bottom-width: 3px;
-  font-size: 14pt;
+  font-size: 1.25rem;
+  font-weight: 600;
   color: #545149;
   resize: none;
   outline: none;
@@ -34,7 +35,7 @@ form div button {
   background-color: #4056A1;
   color: #FFFFFF;
   border-width: 0;
-  padding: 4px;
+  padding: 4px 10px;
 }
 
 mark {
